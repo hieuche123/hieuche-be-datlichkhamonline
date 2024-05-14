@@ -6,10 +6,13 @@ import specialtyController from "../controllers/specialtyController";
 import clinicController from "../controllers/clinicController";
 import adminController from "../controllers/adminController";
 import drugController from "../controllers/drugController";
+import homeController from '../controllers/homeController';
 let router = express.Router();
 
 let initWebRoutes = (app) => {
 
+
+  router.get('/', homeController.getHomePage);
   router.post("/api/login-google", userController.handleLoginGoogle);
   router.post("/api/login", userController.handleLogin);
   router.get("/api/get-all-users", userController.handleGetAllUsers);
